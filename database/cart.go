@@ -104,7 +104,7 @@ func findCartByUserIDAndStatus(userID int32, status string) (carts []*Cart, err 
 func findAllCart() (carts []*Cart, err error) {
 	query := `
 	SELECT user_id, product_id, quantity, COALESCE(total, 0), coalesce(free_items, 0) ,
-	coalesce(total_free_items, 0), coalesce(description, '') FROM cart
+	coalesce(total_free_items, 0), coalesce(description, ''), coalesce(status, '') FROM cart
 	`
 
 	rows, err := db.Query(query)
@@ -123,6 +123,7 @@ func findAllCart() (carts []*Cart, err error) {
 			&cart.FreeItems,
 			&cart.TotalFreeItems,
 			&cart.Description,
+			&cart.Status,
 		)
 		if err != nil {
 			log.Println(err)

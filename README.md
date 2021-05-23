@@ -84,7 +84,7 @@ const (
 	dbname   = "{your_db_name}"
 )
 ```
-2. Simply run golang app using this command : go run app.go, and open localhost:9011, your ready to go!
+2. Simply run golang app using this command : `go run app.go`, and open `localhost:9011`, your ready to go!
 
 ## Sample Query
 ### Get All Product
